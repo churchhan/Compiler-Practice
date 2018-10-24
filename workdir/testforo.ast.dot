@@ -1,0 +1,41 @@
+digraph AST_file { 
+  ordering=out; 
+  node [shape = box, style = filled, fillcolor="white"]; 
+  n1 [label="program",shape=box] 
+  n2 [label="decl list",shape=box] 
+  n1 -> n2 
+  n4 [label="decl:'N':INT",shape=box] 
+  n2 -> n4 
+  n5 [label="decl:'SQRT':INT",shape=box] 
+  n2 -> n5 
+  n6 [label="decl:'SQRTT':INT",shape=box] 
+  n2 -> n6 
+  n3 [label="stmt list",shape=box] 
+  n1 -> n3 
+  n17 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n18 -> n17 
+  n19 [label="5:INT",shape=box] 
+  n18 -> n19 
+  n18 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n18 
+  n21 [label="SQRTT:INT",fillcolor="white",shape=box] 
+  n22 -> n21 
+  n23 [label="10:INT",shape=box] 
+  n22 -> n23 
+  n22 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n22 
+  n31 [label="N:INT",fillcolor="white",shape=box] 
+  n32 -> n31 
+  n33 [label="8:INT",shape=box] 
+  n32 -> n33 
+  n32 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n32 
+  n39 [label="10:INT",shape=box] 
+  n38 [label="writeint",shape=box] 
+  n3 -> n38 
+  n38 -> n39 
+  n42 [label="8:INT",shape=box] 
+  n41 [label="writeint",shape=box] 
+  n3 -> n41 
+  n41 -> n42 
+} 

@@ -1,0 +1,78 @@
+digraph AST_file { 
+  ordering=out; 
+  node [shape = box, style = filled, fillcolor="white"]; 
+  n1 [label="program",shape=box] 
+  n2 [label="decl list",shape=box] 
+  n1 -> n2 
+  n4 [label="decl:'N':INT",shape=box] 
+  n2 -> n4 
+  n5 [label="decl:'SQRT':INT",shape=box] 
+  n2 -> n5 
+  n6 [label="decl:'SQRTT':INT",shape=box] 
+  n2 -> n6 
+  n3 [label="stmt list",shape=box] 
+  n1 -> n3 
+  n17 [label="N:INT",fillcolor="white",shape=box] 
+  n18 -> n17 
+  n19 [label="readint:INT",fillcolor="white",shape=box] 
+  n18 [label=":=:INT",fillcolor="white",shape=box] 
+  n18 -> n19 
+  n18 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n18 
+  n21 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n22 -> n21 
+  n23 [label="0:INT",fillcolor="white",shape=box] 
+  n22 -> n23 
+  n22 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n22 
+  n25 [label="SQRTT:INT",fillcolor="white",shape=box] 
+  n26 -> n25 
+  n27 [label="1:INT",fillcolor="white",shape=box] 
+  n26 -> n27 
+  n26 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n26 
+  n29 [label="while",shape=box] 
+  n3 -> n29 
+  n30 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n32 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n34 [label="N:INT",fillcolor="white",shape=box] 
+  n31 [label="*:",shape=box] 
+  n33 [label="<=:",shape=box] 
+  n31 -> n30 
+  n31 -> n32 
+  n33 -> n31 
+  n33 -> n34 
+  n29 -> n33 
+  n35 [label="stmt list",shape=box] 
+  n29 -> n35 
+  n36 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n37 -> n36 
+  n38 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n40 [label="1:INT",fillcolor="white",shape=box] 
+  n39 -> n38 
+  n39 -> n40 
+  n39 [label="+:INT",fillcolor="white",shape=box] 
+  n37 -> n39 
+  n37 [label=":=:INT",fillcolor="white",shape=box] 
+  n35 -> n37 
+  n42 [label="SQRTT:INT",fillcolor="white",shape=box] 
+  n43 -> n42 
+  n44 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n43 -> n44 
+  n43 [label=":=:INT",fillcolor="white",shape=box] 
+  n35 -> n43 
+  n48 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n49 -> n48 
+  n50 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n52 [label="1:INT",fillcolor="white",shape=box] 
+  n51 -> n50 
+  n51 -> n52 
+  n51 [label="-:INT",fillcolor="white",shape=box] 
+  n49 -> n51 
+  n49 [label=":=:INT",fillcolor="white",shape=box] 
+  n3 -> n49 
+  n55 [label="SQRT:INT",fillcolor="white",shape=box] 
+  n54 [label="writeint",shape=box] 
+  n3 -> n54 
+  n54 -> n55 
+} 

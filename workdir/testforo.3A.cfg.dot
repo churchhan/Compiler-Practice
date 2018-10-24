@@ -1,0 +1,18 @@
+digraph graphviz { node [shape = none]; edge [tailport = s]; entry subgraph cluster { color="/x11/white" n0 [label="
+B1
+loadI 0 => r_N
+loadI 0 => r_SQRT
+loadI 0 => r_SQRTT
+loadI 5 => r0
+i2i r0  => r_SQRT
+loadI 10 => r1
+i2i r1  => r_SQRTT
+loadI 8 => r2
+i2i r2  => r_N
+loadI 10 => r3
+writeInt r3
+loadI 8 => r4
+writeInt r4
+exit",fillcolor="/x11/white",shape=box] }
+entry -> n0 
+n0 -> exit }

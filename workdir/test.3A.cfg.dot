@@ -1,0 +1,71 @@
+digraph graphviz { node [shape = none]; edge [tailport = s]; entry subgraph cluster { color="/x11/white" n0 [label="
+B1
+loadI 0 => r_N
+loadI 0 => r_SQRT
+readInt  => r_N
+loadI 0 => r0
+i2i r0  => r_SQRT
+jumpI -> B2
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n1 [label="
+B2
+mult r_SQRT r_SQRT => r1
+cmp_LE r1 r_N => r2
+cbr r2 -> B3 , B4
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n2 [label="
+B3
+loadI 1 => r3
+add r_SQRT r3 => r4
+i2i r4  => r_SQRT
+jumpI -> B2
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n3 [label="
+B4
+loadI 18 => r5
+add r_N r5 => r6
+i2i r6  => r_N
+loadI 30 => r8
+add r_SQRT r8 => r9
+i2i r9  => r_SQRT
+jumpI -> B5
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n4 [label="
+B5
+loadI 3 => r11
+sub r_N r11 => r12
+cmp_LS r_SQRT r12 => r13
+cbr r13 -> B6 , B7
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n5 [label="
+B6
+loadI 10 => r14
+add r_N r14 => r15
+i2i r15  => r_SQRT
+jumpI -> B8
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n6 [label="
+B7
+loadI 5 => r16
+sub r_N r16 => r17
+i2i r17  => r_SQRT
+jumpI -> B8
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n7 [label="
+B8
+loadI 1 => r18
+sub r_SQRT r18 => r19
+i2i r19  => r_SQRT
+writeInt r_SQRT
+exit",fillcolor="/x11/white",shape=box] }
+entry -> n0
+n0 -> n1
+n1 -> n2
+n2 -> n1
+n1 -> n3
+n3 -> n4
+n4 -> n5
+n5 -> n7
+n4 -> n6
+n6 -> n7
+n7 -> exit }

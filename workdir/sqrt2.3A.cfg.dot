@@ -1,0 +1,39 @@
+digraph graphviz { node [shape = none]; edge [tailport = s]; entry subgraph cluster { color="/x11/white" n0 [label="
+B1
+loadI 0 => r_N
+loadI 0 => r_SQRT
+loadI 0 => r_SQRTT
+readInt  => r_N
+loadI 0 => r0
+i2i r0  => r_SQRT
+loadI 1 => r1
+i2i r1  => r_SQRTT
+jumpI -> B2
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n1 [label="
+B2
+mult r_SQRT r_SQRT => r2
+cmp_LE r2 r_N => r3
+cbr r3 -> B3 , B4
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n2 [label="
+B3
+loadI 1 => r4
+add r_SQRT r4 => r5
+i2i r5  => r_SQRT
+i2i r_SQRT  => r_SQRTT
+jumpI -> B2
+",fillcolor="/x11/white",shape=box] }
+subgraph cluster { color="/x11/white" n3 [label="
+B4
+loadI 1 => r6
+sub r_SQRT r6 => r7
+i2i r7  => r_SQRT
+writeInt r_SQRT
+exit",fillcolor="/x11/white",shape=box] }
+entry -> n0
+n0 -> n1
+n1 -> n2
+n2 -> n1
+n1 -> n3
+n3 -> exit }
